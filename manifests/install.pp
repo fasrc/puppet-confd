@@ -10,4 +10,12 @@ class confd::install (
     source => $download_url,
     target => "${confd::installdir}/confd",
   }
+
+  file { "${confd::installdir}/confd":
+    ensure  => present,
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0750',
+    require => Staging::File["${confd::installdir}/confd"],
+  }
 }
