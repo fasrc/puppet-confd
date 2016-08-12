@@ -4,11 +4,12 @@
 # It sets variables according to platform
 #
 class confd::params {
-  $confdir    = '/etc/confd'
-  $version    = 'latest'
-  $user       = 'root'
-  $sitemodule = 'site_confd'
-  $nodes      = ['127.0.0.1:4001']
+  $confdir      = '/etc/confd'
+  $version      = '0.11.0'
+  $user         = 'root'
+  $sitemodule   = 'site_confd'
+  $nodes        = ['127.0.0.1:4001']
+  $download_url = "https://github.com/kelseyhightower/confd/releases/download/v${version}/confd-${version}-linux-amd64"
 
   case $::osfamily {
     'Debian': {

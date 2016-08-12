@@ -4,6 +4,7 @@
 #
 class confd(
   $version       = $confd::params::version,
+  $download_url  = $confd::params::download_url,
   $installdir    = $confd::params::installdir,
   $sitemodule    = $confd::params::sitemodule,
 
